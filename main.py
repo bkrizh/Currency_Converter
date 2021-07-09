@@ -27,11 +27,11 @@ class SignUpScreen(Screen):
         self.manager.transition.direction='right'
         self.manager.current="login_screen"
 
-    def add_user(self,uname,pwrd):
+    def add_user(self,fname,lname,uname,pwrd):
         with open('user_detail.json') as file:
             user=json.load(file)
 
-        user[uname]={'username':uname,'password':pwrd,
+        user[uname]={'first_name':fname,'last_name':lname,'username':uname,'password':pwrd,
         'created':datetime.now().strftime('%Y-%m-%d %H-%M-%S')}  
 
         with open('user_detail.json','w') as file:
@@ -50,7 +50,7 @@ class LoginSuccessful(Screen):
         self.manager.transition.direction='right'
         self.manager.current="login_screen"
 
-class Currency(App):
+class Currency(App): 
     def build(self):
         return RootWidget()
 
