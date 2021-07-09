@@ -10,6 +10,14 @@ class LoginScreen(Screen):
     def sign_up(self):
         self.manager.transition.direction='left'
         self.manager.current="signup_screen"
+    def log_in(self,uname,pwrd):
+        with open("user_detail.json") as file:
+            user=json.load(file)
+        if uname in user and user[uname]['password']==pwrd:
+            self.manager.transition.direction='left'
+            self.manager.current="log_in_success"
+        else:
+            self.ids.log_err.text="Wrong username or Password"
 
 class RootWidget(ScreenManager):
     pass
@@ -34,6 +42,11 @@ class SignUpScreen(Screen):
 
 class SignUpSuccessful(Screen):
     def back_to_login(self):
+        self.manager.transition.direction='right'
+        self.manager.current="login_screen"
+
+class LoginSuccessful(Screen):
+    def log_out(self):
         self.manager.transition.direction='right'
         self.manager.current="login_screen"
 
