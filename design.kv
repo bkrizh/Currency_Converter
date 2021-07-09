@@ -6,11 +6,17 @@
             Label:
                 text:"User Login"
             TextInput:
+                id:username
                 hint_text:"Enter Username"
             TextInput:
+                id:password
                 hint_text:"Enter Password"
             Button:
                 text:"Login"
+                on_press:root.log_in(root.ids.username.text,root.ids.password.text)
+            Label:
+                id:log_err
+                text:""
         GridLayout:
             cols:2
             Button:
@@ -61,6 +67,23 @@
                 text:"Back To Login page"
                 on_press:root.back_to_login()
 
+<LoginSuccessful>:
+    GridLayout:
+        cols:1
+        Button:
+            text:'Logout'
+            on_press:root.log_out()
+        Label:
+            text:'Convert Currency'
+        TextInput:
+            hint_text:"Base Currency"
+        TextInput:
+            hint_text:"Convert To"
+        Button:
+            text:'Convert'
+        Label:
+            text:'Converted currency'
+
 <RootWidget>:
     LoginScreen:
         name:"login_screen"
@@ -70,3 +93,6 @@
 
     SignUpSuccessful:
         name:'sign_up_success'            
+    
+    LoginSuccessful:
+        name:'log_in_success'
