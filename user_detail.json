@@ -1,12 +1,37 @@
 {
     "user1": {
+        "first_name": "sample",
+        "last_name": "sample",
         "username": "sample",
         "password": "samplepassword",
         "created": "2020-07-07 20-00-00"
     },
     "Jordan": {
+        "first_name": "Michael",
+        "last_name": "Jordan",
         "username": "Jordan",
         "password": "Michael",
         "created": "2021-07-08 20-14-36"
+    },
+    "Charles": {
+        "first_name": "Charles",
+        "last_name": "Lee",
+        "username": "Charles",
+        "password": "CharlesLee",
+        "created": "2021-07-09 13-23-13"
+    },
+    "jack": {
+        "first_name": "Jack",
+        "last_name": "Sparrow",
+        "username": "jack",
+        "password": "Sparrow",
+        "created": "2021-07-10 00-45-21"
+    },
+    "Cordan123": {
+        "first_name": "James",
+        "last_name": "Cordan",
+        "username": "Cordan123",
+        "password": "james456",
+        "created": "2021-07-10 00-57-16"
     }
 }
