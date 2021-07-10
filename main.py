@@ -10,6 +10,9 @@ class LoginScreen(Screen):
     def sign_up(self):
         self.manager.transition.direction='left'
         self.manager.current="signup_screen"
+    def forgot(self):
+        self.manager.transition.direction='right'
+        self.manager.current="forgot_password"        
     def log_in(self,uname,pwrd):
         with open("user_detail.json") as file:
             user=json.load(file)
@@ -49,6 +52,18 @@ class LoginSuccessful(Screen):
     def log_out(self):
         self.manager.transition.direction='right'
         self.manager.current="login_screen"
+
+class ForgotPassword(Screen):
+    def back_to_login(self):
+        self.manager.transition.direction='left'
+        self.manager.current="login_screen"  
+    def find_password(self,uname):
+        with open('user_detail.json') as file:
+            user=json.load(file)
+        if uname in user:
+            self.ids.findpassword.text='Your password is : '+user[uname]['password']
+        else:
+           self.ids.findpassword.text='Cannot find this Username' 
 
 class Currency(App): 
     def build(self):
