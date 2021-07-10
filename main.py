@@ -53,6 +53,29 @@ class LoginSuccessful(Screen):
         self.manager.transition.direction='right'
         self.manager.current="login_screen"
 
+    def convert(self,amt,curr):
+        val=0
+        if curr=='U.S. Dollar (USD)':
+            val=74.5
+        elif curr=='European Euro (EUR)':
+            val=88.5
+        elif curr=='British Pound (GBP)':
+            val=103.5
+        elif curr=='Canadian Dollar (CAD)':
+            val=60
+        elif curr=='Japanese Yen (JPY)':
+            val=0.68
+        elif curr=='Swiss Franc (CHF)':
+            val=81.5
+        elif curr=='Australian/New Zealand Dollar':
+            val=55.75
+        try:
+            amt=int(amt)
+            inr=amt*val
+            self.ids.currency.text=f'[b][u][font=times]INR : {inr}[/font][/u][/b]'
+        except:
+            self.ids.currency.text='Enter Numeric Value in AMOUNT Feild'
+
 class ForgotPassword(Screen):
     def back_to_login(self):
         self.manager.transition.direction='left'
