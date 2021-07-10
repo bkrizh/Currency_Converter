@@ -129,19 +129,59 @@
 <LoginSuccessful>:
     GridLayout:
         cols:1
-        Button:
-            text:'Logout'
-            on_press:root.log_out()
-        Label:
-            text:'Convert Currency'
-        TextInput:
-            hint_text:"Base Currency"
-        TextInput:
-            hint_text:"Convert To"
-        Button:
-            text:'Convert'
-        Label:
-            text:'Converted currency'
+        padding:20,20
+        spacing:25,25
+        GridLayout:
+            cols:1
+            RelativeLayout:
+                Button:
+                    text:'Logout'
+                    on_press:root.log_out()
+                    size_hint: 0.2,0.5
+                    pos_hint:{'center_x':0.95,'center_y':0.75}
+                    background_color:1,1,1,0
+                    opacity:1 if self.state=='normal' else 0.5
+                    color:0.1,0.7,1,1
+            Label:
+                text:'Convert Currency'
+                font_size:'30sp'
+                color:"#00C409"
+        GridLayout:
+            cols:2
+            RelativeLayout:
+                TextInput:
+                    id:amount
+                    hint_text:"Amount"
+                    font_size:'21sp'
+                    size_hint:0.6,0.3
+                    pos_hint:{'center_x':0.4,'center_y':0.6}
+            RelativeLayout:
+                Spinner:
+                    id:spinner
+                    text:'Select The Currency'
+                    font_size:'16sp'
+                    values:['U.S. Dollar (USD)','European Euro (EUR)','British Pound (GBP)','Canadian Dollar (CAD)','Japanese Yen (JPY)','Swiss Franc (CHF)','Australian/New Zealand Dollar']
+                    size_hint:0.6,0.3
+                    pos_hint:{'center_x':0.6,'center_y':0.6}
+                    #on_text:root.selected(spinner.text)
+
+        GridLayout:
+            cols:1
+            RelativeLayout:
+                Button:
+                    text:'Convert To INR'
+                    font_size:'15sp'
+                    size_hint:0.2,0.5
+                    pos_hint:{'center_x':0.5,'center_y':0.85}
+                    background_color:(48/255,84/255,150/255,1)
+                    on_press:root.convert(root.ids.amount.text,root.ids.spinner.text)
+            Label:
+                markup:True
+                id:currency
+                text:''
+                color:'#9370DB'
+                font_size:'30sp'
+
 <ForgotPassword>:
     GridLayout:
         cols:1
