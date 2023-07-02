@@ -12,24 +12,24 @@
                 height:'100dp'      
             Label:
                 markup:True
-                text:"[b][font=times]Convert Any Currency To INR[/font][/b]"
+                text:"[b][font=times]Конвертировать любую валюту в рубли[/font][/b]"
                 font_size:'30sp' 
                 color:'#4DFF00'  
                 font_name: 'Arial'       
             Label:
                 markup:True
-                text:"[i]User Login[/i]"
+                text:"[i]Войти[/i]"
                 font_size:'24sp'
             TextInput:
                 id:username
-                hint_text:"Enter Username"
+                hint_text:"Введите юзернейм"
             TextInput:
                 id:password
-                hint_text:"Enter Password"
+                hint_text:"Введите пароль"
                 password:True
             RelativeLayout:
                 Button:
-                    text:"Login"
+                    text:"Войти"
                     on_press:root.log_in(root.ids.username.text,root.ids.password.text)
                     size_hint:0.2,0.7
                     pos_hint:{'center_x':0.5,'center_y':0.5}
@@ -45,13 +45,13 @@
             padding:20,20
             spacing:20,20
             Button:
-                text:"Forgot Password ?"
+                text:"Забыли пароль ?"
                 on_press:root.forgot()
                 background_color:1,1,1,0
                 opacity:1 if self.state=='normal' else 0.5
                 color:0.1,0.7,1,1
             Button:
-                text:"Sign Up"
+                text:"Зарегистрироваться"
                 on_press:root.sign_up()
                 background_color:1,1,1,0
                 opacity:1 if self.state=='normal' else 0.5
@@ -66,21 +66,21 @@
             padding:20,20
             Label:
                 markup:True
-                text:"[b][font=times][u]Sign Up[/u][/font][/b]"
+                text:"[b][font=times][u]Зарегистрироваться[/u][/font][/b]"
                 font_size:'30sp'
                 color:'#42D2FC'
             TextInput:
                 id: fname
-                hint_text:"Enter First Name"
+                hint_text:"Введите имя"
             TextInput:
                 id: lname
-                hint_text:"Enter Last Name"
+                hint_text:"Введите фамилию"
             TextInput:
                 id: username
-                hint_text:"Enter Username"
+                hint_text:"Введите юзернейм"
             TextInput:
                 id: password
-                hint_text:"Enter Password"
+                hint_text:"Введите пароль"
 
         GridLayout:
             cols:2
@@ -90,7 +90,7 @@
 
             RelativeLayout:
                 Button:
-                    text:"<-- Back"
+                    text:"<-- Назад"
                     on_press:root.back()
                     background_color:(48/255,84/255,150/255,1)
                     opacity:1 if self.state=='normal' else 0.5
@@ -99,7 +99,7 @@
 
             RelativeLayout:
                 Button:
-                    text:"Submit -->"
+                    text:"Продолжить -->"
                     on_press:root.add_user(root.ids.fname.text,root.ids.lname.text,root.ids.username.text,root.ids.password.text)
                     background_color:(48/255,84/255,150/255,1)
                     opacity:1 if self.state=='normal' else 0.5
@@ -115,12 +115,12 @@
             spacing:20,20
             Label:
                 markup:True
-                text:"[b][font=times][u]Sign Up Successfull[/u][/font][/b]"
+                text:"[b][font=times][u]Вход выполнен успешно[/u][/font][/b]"
                 font_size:'60sp'
 
             RelativeLayout:
                 Button:
-                    text:"<-- Back To Login page"
+                    text:"<-- Вернуться на страницу входа"
                     on_press:root.back_to_login()
                     size_hint:0.5,0.2
                     font_size:'20sp'
@@ -135,7 +135,7 @@
             cols:1
             RelativeLayout:
                 Button:
-                    text:'Logout'
+                    text:'Выйти'
                     on_press:root.log_out()
                     size_hint: 0.2,0.5
                     pos_hint:{'center_x':0.95,'center_y':0.75}
@@ -143,7 +143,7 @@
                     opacity:1 if self.state=='normal' else 0.5
                     color:0.1,0.7,1,1
             Label:
-                text:'Convert Currency'
+                text:'Конвертировать валюту'
                 font_size:'30sp'
                 color:"#00C409"
         GridLayout:
@@ -151,14 +151,14 @@
             RelativeLayout:
                 TextInput:
                     id:amount
-                    hint_text:"Amount"
+                    hint_text:"Количество"
                     font_size:'21sp'
                     size_hint:0.6,0.3
                     pos_hint:{'center_x':0.4,'center_y':0.6}
             RelativeLayout:
                 Spinner:
                     id:spinner
-                    text:'Select The Currency'
+                    text:'Выберите валюту для конвертации'
                     font_size:'16sp'
                     values:['U.S. Dollar (USD)','European Euro (EUR)','British Pound (GBP)','Canadian Dollar (CAD)','Japanese Yen (JPY)','Swiss Franc (CHF)','Australian/New Zealand Dollar']
                     size_hint:0.6,0.3
@@ -169,7 +169,7 @@
             cols:1
             RelativeLayout:
                 Button:
-                    text:'Convert To INR'
+                    text:'Конвертировать в рубли'
                     font_size:'15sp'
                     size_hint:0.2,0.5
                     pos_hint:{'center_x':0.5,'center_y':0.85}
@@ -188,11 +188,11 @@
         padding:20,20
         spacing:20,20
         Label:
-            text:'Forgot Your Password ? '
+            text:'Забыли свой пароль ? '
             font_size:'25sp'
         TextInput:
             id:get_uname
-            hint_text:"Enter Username"
+            hint_text:"Введите имя пользователя"
             font_size:'20sp'
         Label:
             id:findpassword
@@ -203,14 +203,14 @@
             Button:
                 markup:True
                 size_hint:0.3,0.4
-                text:'[b]Find password[/b]'
+                text:'[b]Восстановить пароль[/b]'
                 on_press:root.find_password(root.ids.get_uname.text)
                 background_color:(48/255,84/255,150/255,1)
                 pos_hint:{'center_x':0.5,'center_y':0.5}
         RelativeLayout:
             Button:
                 size_hint:0.3,0.4
-                text:"Back -->"
+                text:"Назад -->"
                 on_press:root.back_to_login()
                 background_color:(48/255,84/255,150/255,1)
                 pos_hint:{'center_x':0.8,'center_y':0.5}
