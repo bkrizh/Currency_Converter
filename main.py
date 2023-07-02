@@ -2,7 +2,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import Screen,ScreenManager
 import json
-from datetime import datetime
+from datetime import datetimegit
 
 Builder.load_file('design.kv')
 

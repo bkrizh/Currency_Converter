@@ -1,1 +1,8 @@
 user_detail.json
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
